@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SMA Prestasi Bangsa | Sekolah Unggulan</title>
+  <meta name="description" content="SMA Prestasi Bangsa - Sekolah unggulan yang membentuk generasi berprestasi, berkarakter, dan siap menghadapi masa depan." />
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Custom Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              300: '#93c5fd',
+              400: '#60a5fa',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a',
+            },
+            accent: {
+              400: '#fbbf24',
+              500: '#f59e0b',
+              600: '#d97706',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
+  <style>
+    .hero-gradient {
+      background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 40%, #3b82f6 100%);
+    }
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    }
+  </style>
+</head>
+<body class="font-sans text-gray-800 antialiased">
+
+  <!-- ========== NAVBAR ========== -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 lg:h-20">
+        <!-- Logo -->
+        <a href="#beranda" class="flex items-center gap-3">
+          <div class="w-10 h-10 lg:w-12 lg:h-12 bg-primary-700 rounded-full flex items-center justify-center">
+            <i class="fas fa-graduation-cap text-white text-lg lg:text-xl"></i>
+          </div>
+          <div>
+            <h1 class="text-lg lg:text-xl font-bold text-primary-800 leading-tight">SMA Prestasi Bangsa</h1>
+            <p class="text-xs text-gray-500 hidden sm:block">Unggul dalam Prestasi & Karakter</p>
+          </div>
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden lg:flex items-center gap-8">
+          <a href="#beranda" class="text-sm font-medium text-gray-700 hover:text-primary-600 transition">Beranda</a>
+          <a href="#tentang" class="text-sm font-medium text-gray-700 hover:text-primary-600 transition">Tentang</a>
+          <a href="#program" class="text-sm font-medium text-gray-700 hover:text-primary-600 transition">Program</a>
+          <a href="#fasilitas" class="text-sm font-medium text-gray-700 hover:text-primary-600 transition">Fasilitas</a>
+          <a href="#prestasi" class="text-sm font-medium text-gray-700 hover:text-primary-600 transition">Prestasi</a>
+          <a href="#kontak" class="text-sm font-medium text-gray-700 hover:text-primary-600 transition">Kontak</a>
+          <a href="#kontak" class="ml-2 px-5 py-2.5 bg-primary-600 hover:bg-primary-700 text-white text-sm font-semibold rounded-full transition shadow-md hover:shadow-lg">
+            Daftar Sekarang
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="menu-btn" class="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition">
+          <i class="fas fa-bars text-xl text-gray-700"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100 shadow-lg">
+      <div class="px-4 py-4 space-y-1">
+        <a href="#beranda" class="block px-4 py-3 rounded-lg text-gray-700 hover:bg-primary-50 hover:text-primary-600 font-medium">Beranda</a>
+        <a href="#tentang" class="block px-4 py-3 rounded-lg text-gray-700 hover:bg-primary-50 hover:text-primary-600 font-medium">Tentang</a>
+        <a href="#program" class="block px-4 py-3 rounded-lg text-gray-700 hover:bg-primary-50 hover:text-primary-600 font-medium">Program</a>
+        <a href="#fasilitas" class="block px-4 py-3 rounded-lg text-gray-700 hover:bg-primary-50 hover:text-primary-600 font-medium">Fasilitas</a>
+        <a href="#prestasi" class="block px-4 py-3 rounded-lg text-gray-700 hover:bg-primary-50 hover:text-primary-600 font-medium">Prestasi</a>
+        <a href="#kontak" class="block px-4 py-3 rounded-lg text-gray-700 hover:bg-primary-50 hover:text-primary-600 font-medium">Kontak</a>
+        <a href="#kontak" class="block mt-2 px-4 py-3 bg-primary-600 text-white text-center rounded-lg font-semibold">Daftar Sekarang</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section id="beranda" class="hero-gradient min-h-screen flex items-center pt-20 relative overflow-hidden">
+    <!-- Decorative elements -->
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-20 left-10 w-72 h-72 bg-white rounded-full blur-3xl"></div>
+      <div class="absolute bottom-20 right-10 w-96 h-96 bg-accent-400 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 relative z-10">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <!-- Left Content -->
+        <div class="text-white">
+          <div class="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <i class="fas fa-star text-accent-400"></i>
+            <span>Sekolah Terbaik 2025</span>
+          </div>
+          
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+            Membentuk Generasi<br>
+            <span class="text-accent-400">Berprestasi</span> & Berkarakter
+          </h1>
+          
+          <p class="text-lg text-blue-100 mb-8 max-w-lg leading-relaxed">
+            SMA Prestasi Bangsa berkomitmen mencetak generasi unggul yang siap menghadapi tantangan global dengan landasan iman, ilmu, dan akhlak mulia.
+          </p>
+          
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="#kontak" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-accent-500 hover:bg-accent-600 text-white font-semibold rounded-full transition shadow-lg hover:shadow-xl">
+              <i class="fas fa-edit"></i>
+              Daftar PPDB 2026
+            </a>
+            <a href="#tentang" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-semibold rounded-full border border-white/30 transition">
+              <i class="fas fa-play-circle"></i>
+              Pelajari Lebih Lanjut
+            </a>
+          </div>
+
+          <!-- Stats -->
+          <div class="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-white/20">
+            <div>
+              <p class="text-3xl lg:text-4xl font-bold text-accent-400">25+</p>
+              <p class="text-sm text-blue-100 mt-1">Tahun Berpengalaman</p>
+            </div>
+            <div>
+              <p class="text-3xl lg:text-4xl font-bold text-accent-400">1.200+</p>
+              <p class="text-sm text-blue-100 mt-1">Siswa Aktif</p>
+            </div>
+            <div>
+              <p class="text-3xl lg:text-4xl font-bold text-accent-400">98%</p>
+              <p class="text-sm text-blue-100 mt-1">Lulusan PTN</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Content - Image Placeholder -->
+        <div class="hidden lg:block relative">
+          <div class="relative">
+            <div class="absolute -inset-4 bg-gradient-to-r from-accent-400 to-primary-400 rounded-3xl blur-2xl opacity-30"></div>
+            <div class="relative bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20">
+              <div class="aspect-[4/5] bg-gradient-to-br from-primary-600 to-primary-800 rounded-2xl flex flex-col items-center justify-center text-white">
+                <i class="fas fa-school text-6xl mb-4 opacity-80"></i>
+                <p class="text-lg font-semibold">Kampus Modern</p>
+                <p class="text-sm text-blue-200 mt-1">Fasilitas Lengkap & Nyaman</p>
+              </div>
+              
+              <!-- Floating cards -->
+              <div class="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-4 flex items-center gap-3">
+                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                  <i class="fas fa-trophy text-green-600 text-xl"></i>
+                </div>
+                <div>
+                  <p class="font-bold text-gray-800">150+</p>
+                  <p class="text-xs text-gray-500">Prestasi Nasional</p>
+                </div>
+              </div>
+              
+              <div class="absolute -top-4 -right-4 bg-white rounded-2xl shadow-xl p-4 flex items-center gap-3">
+                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                  <i class="fas fa-users text-blue-600 text-xl"></i>
+                </div>
+                <div>
+                  <p class="font-bold text-gray-800">85+</p>
+                  <p class="text-xs text-gray-500">Guru Profesional</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TENTANG ========== -->
+  <section id="tentang" class="py-20 lg:py-28 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="inline-block px-4 py-1.5 bg-primary-100 text-primary-700 text-sm font-semibold rounded-full mb-4">Tentang Kami</span>
+        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Sekolah yang Menginspirasi</h2>
+        <p class="text-gray-600 text-lg">Kami berkomitmen memberikan pendidikan berkualitas yang mengintegrasikan akademik, karakter, dan keterampilan abad 21.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <div class="bg-white rounded-2xl p-8 shadow-sm card-hover border border-gray-100">
+          <div class="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center mb-6">
+            <i class="fas fa-bullseye text-primary-600 text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Visi</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Menjadi sekolah unggulan yang menghasilkan lulusan berprestasi, berkarakter mulia, dan berwawasan global.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white rounded-2xl p-8 shadow-sm card-hover border border-gray-100">
+          <div class="w-14 h-14 bg-accent-100 rounded-xl flex items-center justify-center mb-6">
+            <i class="fas fa-rocket text-accent-600 text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Misi</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Menyelenggarakan pendidikan berkualitas, mengembangkan potensi siswa secara holistik, dan membangun budaya prestasi.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white rounded-2xl p-8 shadow-sm card-hover border border-gray-100">
+          <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mb-6">
+            <i class="fas fa-heart text-green-600 text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Nilai-Nilai</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Integritas, disiplin, kreativitas, kolaborasi, dan kepedulian sosial menjadi fondasi utama karakter siswa.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROGRAM ========== -->
+  <section id="program" class="py-20 lg:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="inline-block px-4 py-1.5 bg-primary-100 text-primary-700 text-sm font-semibold rounded-full mb-4">Program Unggulan</span>
+        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Pilihan Program Belajar</h2>
+        <p class="text-gray-600 text-lg">Kami menawarkan berbagai program yang dirancang untuk mengembangkan potensi unik setiap siswa.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Program 1 -->
+        <div class="group relative bg-gradient-to-br from-primary-600 to-primary-800 rounded-2xl p-8 text-white overflow-hidden card-hover">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+          <div class="relative z-10">
+            <div class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center mb-6">
+              <i class="fas fa-flask text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Program IPA</h3>
+            <p class="text-blue-100 mb-6 leading-relaxed">
+              Fokus pada sains, matematika, dan teknologi dengan laboratorium modern dan pendekatan project-based learning.
+            </p>
+            <ul class="space-y-2 text-sm text-blue-100">
+              <li class="flex items-center gap-2"><i class="fas fa-check text-accent-400"></i> Lab Kimia, Fisika & Biologi</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-accent-400"></i> Olimpiade Sains</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-accent-400"></i> Riset Siswa</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Program 2 -->
+        <div class="group relative bg-gradient-to-br from-accent-500 to-accent-600 rounded-2xl p-8 text-white overflow-hidden card-hover">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+          <div class="relative z-10">
+            <div class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center mb-6">
+              <i class="fas fa-book-open text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Program IPS</h3>
+            <p class="text-amber-50 mb-6 leading-relaxed">
+              Mengembangkan kemampuan analisis sosial, ekonomi, dan kewirausahaan dengan pendekatan kontekstual.
+            </p>
+            <ul class="space-y-2 text-sm text-amber-50">
+              <li class="flex items-center gap-2"><i class="fas fa-check text-white"></i> Debat & Public Speaking</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-white"></i> Business Plan Competition</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-white"></i> Studi Lapangan</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Program 3 -->
+        <div class="group relative bg-gradient-to-br from-emerald-600 to-emerald-800 rounded-2xl p-8 text-white overflow-hidden card-hover">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+          <div class="relative z-10">
+            <div class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center mb-6">
+              <i class="fas fa-laptop-code text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Program Digital</h3>
+            <p class="text-emerald-100 mb-6 leading-relaxed">
+              Membekali siswa dengan keterampilan coding, desain digital, dan literasi teknologi masa depan.
+            </p>
+            <ul class="space-y-2 text-sm text-emerald-100">
+              <li class="flex items-center gap-2"><i class="fas fa-check text-accent-400"></i> Coding & Web Development</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-accent-400"></i> Desain Grafis & UI/UX</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-accent-400"></i> Robotik & IoT</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FASILITAS ========== -->
+  <section id="fasilitas" class="py-20 lg:py-28 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="inline-block px-4 py-1.5 bg-primary-100 text-primary-700 text-sm font-semibold rounded-full mb-4">Fasilitas</span>
+        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Lingkungan Belajar Modern</h2>
+        <p class="text-gray-600 text-lg">Fasilitas lengkap dan nyaman untuk mendukung proses belajar mengajar yang optimal.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white rounded-2xl p-6 text-center shadow-sm card-hover border border-gray-100">
+          <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-chalkboard-teacher text-blue-600 text-2xl"></i>
+          </div>
+          <h3 class="font-bold text-gray-900 mb-2">Ruang Kelas AC</h3>
+          <p class="text-sm text-gray-500">40 ruang kelas ber-AC dengan smart board</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 text-center shadow-sm card-hover border border-gray-100">
+          <div class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-flask text-purple-600 text-2xl"></i>
+          </div>
+          <h3 class="font-bold text-gray-900 mb-2">Laboratorium</h3>
+          <p class="text-sm text-gray-500">Lab IPA, Komputer & Bahasa lengkap</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 text-center shadow-sm card-hover border border-gray-100">
+          <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-book-reader text-green-600 text-2xl"></i>
+          </div>
+          <h3 class="font-bold text-gray-900 mb-2">Perpustakaan</h3>
+          <p class="text-sm text-gray-500">10.000+ koleksi buku & e-library</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 text-center shadow-sm card-hover border border-gray-100">
+          <div class="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-futbol text-orange-600 text-2xl"></i>
+          </div>
+          <h3 class="font-bold text-gray-900 mb-2">Lapangan Olahraga</h3>
+          <p class="text-sm text-gray-500">Lapangan basket, futsal & voli</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 text-center shadow-sm card-hover border border-gray-100">
+          <div class="w-16 h-16 bg-red-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-mosque text-red-600 text-2xl"></i>
+          </div>
+          <h3 class="font-bold text-gray-900 mb-2">Masjid</h3>
+          <p class="text-sm text-gray-500">Masjid representatif untuk ibadah</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 text-center shadow-sm card-hover border border-gray-100">
+          <div class="w-16 h-16 bg-cyan-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-utensils text-cyan-600 text-2xl"></i>
+          </div>
+          <h3 class="font-bold text-gray-900 mb-2">Kantin Sehat</h3>
+          <p class="text-sm text-gray-500">Makanan bergizi & harga terjangkau</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 text-center shadow-sm card-hover border border-gray-100">
+          <div class="w-16 h-16 bg-indigo-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-wifi text-indigo-600 text-2xl"></i>
+          </div>
+          <h3 class="font-bold text-gray-900 mb-2">WiFi Area</h3>
+          <p class="text-sm text-gray-500">Internet cepat di seluruh area kampus</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 text-center shadow-sm card-hover border border-gray-100">
+          <div class="w-16 h-16 bg-pink-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-bus text-pink-600 text-2xl"></i>
+          </div>
+          <h3 class="font-bold text-gray-900 mb-2">Antar Jemput</h3>
+          <p class="text-sm text-gray-500">Layanan bus sekolah ke berbagai rute</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PRESTASI ========== -->
+  <section id="prestasi" class="py-20 lg:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="inline-block px-4 py-1.5 bg-primary-100 text-primary-700 text-sm font-semibold rounded-full mb-4">Prestasi</span>
+        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Kebanggaan Kami</h2>
+        <p class="text-gray-600 text-lg">Siswa-siswi kami terus menorehkan prestasi di tingkat lokal, nasional, hingga internasional.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-gradient-to-br from-yellow-50 to-amber-50 rounded-2xl p-6 border border-amber-100 card-hover">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-amber-400 rounded-xl flex items-center justify-center flex-shrink-0">
+              <i class="fas fa-medal text-white text-xl"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-gray-900 mb-1">Juara 1 Olimpiade Sains</h3>
+              <p class="text-sm text-gray-600 mb-2">Tingkat Nasional 2025</p>
+              <p class="text-xs text-amber-700 font-medium">Bidang Matematika</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-6 border border-blue-100 card-hover">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center flex-shrink-0">
+              <i class="fas fa-trophy text-white text-xl"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-gray-900 mb-1">Juara Umum Lomba Debat</h3>
+              <p class="text-sm text-gray-600 mb-2">Tingkat Provinsi 2025</p>
+              <p class="text-xs text-blue-700 font-medium">Bahasa Indonesia & Inggris</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-6 border border-green-100 card-hover">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-emerald-500 rounded-xl flex items-center justify-center flex-shrink-0">
+              <i class="fas fa-robot text-white text-xl"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-gray-900 mb-1">Juara 2 Robotik</h3>
+              <p class="text-sm text-gray-600 mb-2">Kompetisi Internasional 2024</p>
+              <p class="text-xs text-emerald-700 font-medium">Kategori Line Follower</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-br from-purple-50 to-violet-50 rounded-2xl p-6 border border-purple-100 card-hover">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center flex-shrink-0">
+              <i class="fas fa-palette text-white text-xl"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-gray-900 mb-1">Juara 1 Desain Poster</h3>
+              <p class="text-sm text-gray-600 mb-2">Lomba Nasional 2025</p>
+              <p class="text-xs text-purple-700 font-medium">Tema Lingkungan Hidup</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-br from-red-50 to-rose-50 rounded-2xl p-6 border border-red-100 card-hover">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-red-500 rounded-xl flex items-center justify-center flex-shrink-0">
+              <i class="fas fa-basketball-ball text-white text-xl"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-gray-900 mb-1">Juara 1 Basket Putra</h3>
+              <p class="text-sm text-gray-600 mb-2">POPDA Kabupaten 2025</p>
+              <p class="text-xs text-red-700 font-medium">Cabang Olahraga</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-br from-cyan-50 to-sky-50 rounded-2xl p-6 border border-cyan-100 card-hover">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-cyan-500 rounded-xl flex items-center justify-center flex-shrink-0">
+              <i class="fas fa-microphone text-white text-xl"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-gray-900 mb-1">Best Speaker</h3>
+              <p class="text-sm text-gray-600 mb-2">English Speech Contest 2025</p>
+              <p class="text-xs text-cyan-700 font-medium">Tingkat Nasional</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA ========== -->
+  <section class="py-20 bg-primary-800 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-0 left-1/4 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 right-1/4 w-72 h-72 bg-accent-400 rounded-full blur-3xl"></div>
+    </div>
+    
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">Siap Bergabung dengan Kami?</h2>
+      <p class="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
+        Pendaftaran Peserta Didik Baru (PPDB) Tahun Ajaran 2026/2027 telah dibuka. Daftarkan putra-putri Anda sekarang!
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#kontak" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-accent-500 hover:bg-accent-600 text-white font-semibold rounded-full transition shadow-lg">
+          <i class="fas fa-edit"></i>
+          Daftar Online
+        </a>
+        <a href="tel:+6281234567890" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-full border border-white/30 transition">
+          <i class="fas fa-phone"></i>
+          Hubungi Kami
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== KONTAK ========== -->
+  <section id="kontak" class="py-20 lg:py-28 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12">
+        <!-- Info -->
+        <div>
+          <span class="inline-block px-4 py-1.5 bg-primary-100 text-primary-700 text-sm font-semibold rounded-full mb-4">Kontak</span>
+          <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">Hubungi Kami</h2>
+          <p class="text-gray-600 mb-8 leading-relaxed">
+            Silakan hubungi kami untuk informasi lebih lanjut mengenai pendaftaran, program sekolah, atau kunjungan ke kampus.
+          </p>
+
+          <div class="space-y-6">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-map-marker-alt text-primary-600"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900">Alamat</h4>
+                <p class="text-gray-600 text-sm mt-1">Jl. Pendidikan No. 123, Kecamatan Cerdas<br>Kota Prestasi, Jawa Barat 12345</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-phone text-primary-600"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900">Telepon</h4>
+                <p class="text-gray-600 text-sm mt-1">(021) 1234-5678<br>+62 812-3456-7890</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-envelope text-primary-600"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900">Email</h4>
+                <p class="text-gray-600 text-sm mt-1">info@smaprestasibangsa.sch.id<br>ppdb@smaprestasibangsa.sch.id</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-clock text-primary-600"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900">Jam Operasional</h4>
+                <p class="text-gray-600 text-sm mt-1">Senin - Jumat: 07.00 - 16.00 WIB<br>Sabtu: 08.00 - 12.00 WIB</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
+          <h3 class="text-xl font-bold text-gray-900 mb-6">Kirim Pesan</h3>
+          <form class="space-y-5">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1.5">Nama Lengkap</label>
+              <input type="text" placeholder="Masukkan nama Anda" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1.5">Email</label>
+              <input type="email" placeholder="nama@email.com" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1.5">Nomor WhatsApp</label>
+              <input type="tel" placeholder="08xxxxxxxxxx" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1.5">Pesan</label>
+              <textarea rows="4" placeholder="Tulis pesan Anda di sini..." class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition resize-none"></textarea>
+            </div>
+            <button type="submit" class="w-full py-3.5 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-xl transition shadow-md hover:shadow-lg">
+              Kirim Pesan
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="bg-gray-900 text-gray-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <!-- Brand -->
+        <div class="lg:col-span-1">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-10 h-10 bg-primary-600 rounded-full flex items-center justify-center">
+              <i class="fas fa-graduation-cap text-white"></i>
+            </div>
+            <div>
+              <h3 class="text-white font-bold">SMA Prestasi Bangsa</h3>
+              <p class="text-xs text-gray-400">Unggul dalam Prestasi</p>
+            </div>
+          </div>
+          <p class="text-sm text-gray-400 leading-relaxed mb-5">
+            Membentuk generasi berprestasi, berkarakter, dan siap menghadapi masa depan dengan landasan iman dan ilmu.
+          </p>
+          <div class="flex gap-3">
+            <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-primary-600 rounded-full flex items-center justify-center transition">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-primary-600 rounded-full flex items-center justify-center transition">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-primary-600 rounded-full flex items-center justify-center transition">
+              <i class="fab fa-youtube"></i>
+            </a>
+            <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-primary-600 rounded-full flex items-center justify-center transition">
+              <i class="fab fa-tiktok"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Links -->
+        <div>
+          <h4 class="text-white font-semibold mb-5">Tautan Cepat</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="#beranda" class="hover:text-primary-400 transition">Beranda</a></li>
+            <li><a href="#tentang" class="hover:text-primary-400 transition">Tentang Kami</a></li>
+            <li><a href="#program" class="hover:text-primary-400 transition">Program</a></li>
+            <li><a href="#fasilitas" class="hover:text-primary-400 transition">Fasilitas</a></li>
+            <li><a href="#prestasi" class="hover:text-primary-400 transition">Prestasi</a></li>
+          </ul>
+        </div>
+
+        <!-- Program -->
+        <div>
+          <h4 class="text-white font-semibold mb-5">Program</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="#program" class="hover:text-primary-400 transition">Program IPA</a></li>
+            <li><a href="#program" class="hover:text-primary-400 transition">Program IPS</a></li>
+            <li><a href="#program" class="hover:text-primary-400 transition">Program Digital</a></li>
+            <li><a href="#" class="hover:text-primary-400 transition">Ekstrakurikuler</a></li>
+            <li><a href="#" class="hover:text-primary-400 transition">Beasiswa</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <h4 class="text-white font-semibold mb-5">Kontak</h4>
+          <ul class="space-y-3 text-sm">
+            <li class="flex items-start gap-2">
+              <i class="fas fa-map-marker-alt mt-1 text-primary-400"></i>
+              <span>Jl. Pendidikan No. 123<br>Kota Prestasi, Jawa Barat</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <i class="fas fa-phone text-primary-400"></i>
+              <span>(021) 1234-5678</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <i class="fas fa-envelope text-primary-400"></i>
+              <span>info@smaprestasibangsa.sch.id</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <p class="text-sm text-gray-500">&copy; 2026 SMA Prestasi Bangsa. Hak Cipta Dilindungi.</p>
+        <div class="flex gap-6 text-sm text-gray-500">
+          <a href="#" class="hover:text-primary-400 transition">Kebijakan Privasi</a>
+          <a href="#" class="hover:text-primary-400 transition">Syarat & Ketentuan</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button id="back-to-top" class="fixed bottom-6 right-6 w-12 h-12 bg-primary-600 hover:bg-primary-700 text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 z-40">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- ========== JAVASCRIPT ========== -->
+  <script>
+    // Mobile Menu Toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      const icon = menuBtn.querySelector('i');
+      icon.classList.toggle('fa-bars');
+      icon.classList.toggle('fa-times');
+    });
+
+    // Close mobile menu when clicking a link
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        const icon = menuBtn.querySelector('i');
+        icon.classList.add('fa-bars');
+        icon.classList.remove('fa-times');
+      });
+    });
+
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('shadow-md');
+      } else {
+        navbar.classList.remove('shadow-md');
+      }
+    });
+
+    // Back to top button
+    const backToTop = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        backToTop.classList.remove('opacity-0', 'invisible');
+        backToTop.classList.add('opacity-100', 'visible');
+      } else {
+        backToTop.classList.add('opacity-0', 'invisible');
+        backToTop.classList.remove('opacity-100', 'visible');
+      }
+    });
+
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Smooth scroll for all anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
